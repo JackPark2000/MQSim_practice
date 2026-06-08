@@ -1,0 +1,19 @@
+MQSim started at Sun Jun  7 21:20:56 2026
+
+******************************
+Executing scenario 1 out of 1 .......
+SSD Device preconditioning started .........
+The specified initial occupancy value could not be satisfied as the working set of workload #0 is small. MQSim made some adjustments!
+Finished preconditioning. Duration of preconditioning: 0:7:58
+[>                   ]  0% progress in Host.IO_Flow.Synth.No_0
+
+MQSim finished at Sun Jun  7 21:29:13 2026
+
+Total simulation time: 0:8:17
+
+Writing results to output file .......
+Flow Host.IO_Flow.Synth.No_0 - total requests generated: 630 total requests serviced:502
+                   - device response time: 2324 (us) end-to-end request delay:2324 (us)
+munmap_chunk(): invalid pointer
+Command terminated by signal 6
+REAL=497.17 USER=493.72 SYS=3.26 MAXRSS=9535124_KB

@@ -1,0 +1,62 @@
+
+==============================================================================================================
+PER-RUN SUMMARY  (baseline = occ=50, ws=100, thr=0.001, OP=0.07, Read%=1, QD=128, Stop=30s)
+==============================================================================================================
+name                occ   ws     thr    OP  GC_Exec  AvgPgMv  GC_Erase_Enq    UserW   WAF   DevResp   MaxResp       OK?
+baseline             50  100   0.001  0.07        0      0.0             0  1191951  1.00      3188      3847        ok
+sw_occ_70            70  100   0.001  0.07      691     84.4           815   656348  1.14      5791    760205        ok
+sw_occ_80            80  100   0.001  0.07  [NO OUTPUT — no output XML]
+sw_occ_90            90  100   0.001  0.07        0      0.0             0        0     -      1946      2630     CRASH
+sw_occ_95            95  100   0.001  0.07        0      0.0             0      239  1.00      2324      7311     CRASH
+sw_ws_50             50   50   0.001  0.07        0      0.0             0  1189989  1.00      3192      3963        ok
+sw_ws_20             50   20   0.001  0.07        0      0.0             0  1187530  1.00      3196      3805        ok
+sw_ws_10             50   10   0.001  0.07        0      0.0             0  1191435  1.00      3180      3776        ok
+sw_ws_5              50    5   0.001  0.07        0      0.0             0  1191027  1.00      3171      3734        ok
+sw_thr_0p005         50  100   0.005  0.07        0      0.0             0  1191951  1.00      3188      3847        ok
+sw_thr_0p01          50  100    0.01  0.07       15     21.3            24  1167402  1.00      3256    258747        ok
+sw_thr_0p025         50  100   0.025  0.07      514     31.2           612   913450  1.04      4161    522595        ok
+sw_thr_0p05          50  100    0.05  0.07     2828     40.6          2955   658419  1.22      5773    775181        ok
+sw_op_0p05           50  100   0.001  0.05       15     25.8            23  1170274  1.00      3247    262326        ok
+sw_op_0p03           50  100   0.001  0.03       19     26.9            29  1163935  1.00      3265    271234        ok
+sw_op_0p02           50  100   0.001  0.02       18     27.7            28  1155016  1.00      3290    256728        ok
+sw_op_0p01           50  100   0.001  0.01       20     29.2            30  1159219  1.00      3278    217213        ok
+
+==============================================================================================================
+PER-PARAMETER GC TRIGGER MAP
+==============================================================================================================
+
+[Initial_Occupancy_Percentage]  others held at baseline (occ=50, ws=100, thr=0.001, OP=0.07)
+       value   GC_Exec   AvgPgMv  GC_Erase_Enq     UserW   WAF  DevResp_us    trigger?
+          50         0       0.0             0   1191951  1.00        3188          no
+          70       691      84.4           815    656348  1.14        5791   **FIRST**
+          80  [missing or NO OUTPUT]
+          90         0       0.0             0         0     -        1946     [CRASH]
+          95         0       0.0             0       239  1.00        2324     [CRASH]
+  -> GC starts triggering at occ=70
+
+[Working_Set_Percentage]  others held at baseline (occ=50, ws=100, thr=0.001, OP=0.07)
+       value   GC_Exec   AvgPgMv  GC_Erase_Enq     UserW   WAF  DevResp_us    trigger?
+         100         0       0.0             0   1191951  1.00        3188          no
+          50         0       0.0             0   1189989  1.00        3192          no
+          20         0       0.0             0   1187530  1.00        3196          no
+          10         0       0.0             0   1191435  1.00        3180          no
+           5         0       0.0             0   1191027  1.00        3171          no
+  -> no GC across entire sweep range (within tested values)
+
+[GC_Exec_Threshold]  others held at baseline (occ=50, ws=100, thr=0.001, OP=0.07)
+       value   GC_Exec   AvgPgMv  GC_Erase_Enq     UserW   WAF  DevResp_us    trigger?
+       0.001         0       0.0             0   1191951  1.00        3188          no
+       0.005         0       0.0             0   1191951  1.00        3188          no
+        0.01        15      21.3            24   1167402  1.00        3256   **FIRST**
+       0.025       514      31.2           612    913450  1.04        4161         YES
+        0.05      2828      40.6          2955    658419  1.22        5773         YES
+  -> GC starts triggering at thr=0.01
+
+[Overprovisioning_Ratio]  others held at baseline (occ=50, ws=100, thr=0.001, OP=0.07)
+       value   GC_Exec   AvgPgMv  GC_Erase_Enq     UserW   WAF  DevResp_us    trigger?
+        0.07         0       0.0             0   1191951  1.00        3188          no
+        0.05        15      25.8            23   1170274  1.00        3247   **FIRST**
+        0.03        19      26.9            29   1163935  1.00        3265         YES
+        0.02        18      27.7            28   1155016  1.00        3290         YES
+        0.01        20      29.2            30   1159219  1.00        3278         YES
+  -> GC starts triggering at op=0.05

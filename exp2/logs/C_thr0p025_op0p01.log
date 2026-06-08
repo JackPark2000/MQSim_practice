@@ -1,0 +1,58 @@
+The specified overprovisioning ratio is too small. The simluation may not run correctly.
+MQSim started at Sun Jun  7 23:04:38 2026
+
+******************************
+Executing scenario 1 out of 1 .......
+SSD Device preconditioning started .........
+Finished preconditioning. Duration of preconditioning: 0:2:57
+[>                   ]  0% progress in Host.IO_Flow.Synth.No_0
+
+[=>                  ]  5% progress in Host.IO_Flow.Synth.No_0
+
+[==>                 ]  10% progress in Host.IO_Flow.Synth.No_0
+
+[===>                ]  15% progress in Host.IO_Flow.Synth.No_0
+
+[====>               ]  20% progress in Host.IO_Flow.Synth.No_0
+
+[=====>              ]  25% progress in Host.IO_Flow.Synth.No_0
+
+[======>             ]  30% progress in Host.IO_Flow.Synth.No_0
+
+[=======>            ]  35% progress in Host.IO_Flow.Synth.No_0
+
+[========>           ]  40% progress in Host.IO_Flow.Synth.No_0
+
+[=========>          ]  45% progress in Host.IO_Flow.Synth.No_0
+
+[==========>         ]  50% progress in Host.IO_Flow.Synth.No_0
+
+[===========>        ]  55% progress in Host.IO_Flow.Synth.No_0
+
+[============>       ]  60% progress in Host.IO_Flow.Synth.No_0
+
+[=============>      ]  65% progress in Host.IO_Flow.Synth.No_0
+
+[==============>     ]  70% progress in Host.IO_Flow.Synth.No_0
+
+[===============>    ]  75% progress in Host.IO_Flow.Synth.No_0
+
+[================>   ]  80% progress in Host.IO_Flow.Synth.No_0
+
+[=================>  ]  85% progress in Host.IO_Flow.Synth.No_0
+
+[==================> ]  90% progress in Host.IO_Flow.Synth.No_0
+
+[===================>]  95% progress in Host.IO_Flow.Synth.No_0
+
+[====================]  100% progress in Host.IO_Flow.Synth.No_0
+
+MQSim finished at Sun Jun  7 23:07:57 2026
+
+Total simulation time: 0:3:19
+
+Writing results to output file .......
+Flow Host.IO_Flow.Synth.No_0 - total requests generated: 857881 total requests serviced:857881
+                   - device response time: 4477 (us) end-to-end request delay:4477 (us)
+Simulation complete; Press any key to exit.
+REAL=199.50 USER=197.37 SYS=2.12 MAXRSS=6576080_KB

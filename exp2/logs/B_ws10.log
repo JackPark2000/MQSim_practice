@@ -1,0 +1,58 @@
+MQSim started at Sun Jun  7 22:55:51 2026
+
+******************************
+Executing scenario 1 out of 1 .......
+SSD Device preconditioning started .........
+The specified initial occupancy value could not be satisfied as the working set of workload #0 is small. MQSim made some adjustments!
+Finished preconditioning. Duration of preconditioning: 0:2:22
+[>                   ]  0% progress in Host.IO_Flow.Synth.No_0
+
+[=>                  ]  5% progress in Host.IO_Flow.Synth.No_0
+
+[==>                 ]  10% progress in Host.IO_Flow.Synth.No_0
+
+[===>                ]  15% progress in Host.IO_Flow.Synth.No_0
+
+[====>               ]  20% progress in Host.IO_Flow.Synth.No_0
+
+[=====>              ]  25% progress in Host.IO_Flow.Synth.No_0
+
+[======>             ]  30% progress in Host.IO_Flow.Synth.No_0
+
+[=======>            ]  35% progress in Host.IO_Flow.Synth.No_0
+
+[========>           ]  40% progress in Host.IO_Flow.Synth.No_0
+
+[=========>          ]  45% progress in Host.IO_Flow.Synth.No_0
+
+[==========>         ]  50% progress in Host.IO_Flow.Synth.No_0
+
+[===========>        ]  55% progress in Host.IO_Flow.Synth.No_0
+
+[============>       ]  60% progress in Host.IO_Flow.Synth.No_0
+
+[=============>      ]  65% progress in Host.IO_Flow.Synth.No_0
+
+[==============>     ]  70% progress in Host.IO_Flow.Synth.No_0
+
+[===============>    ]  75% progress in Host.IO_Flow.Synth.No_0
+
+[================>   ]  80% progress in Host.IO_Flow.Synth.No_0
+
+[=================>  ]  85% progress in Host.IO_Flow.Synth.No_0
+
+[==================> ]  90% progress in Host.IO_Flow.Synth.No_0
+
+[===================>]  95% progress in Host.IO_Flow.Synth.No_0
+
+[====================]  100% progress in Host.IO_Flow.Synth.No_0
+
+MQSim finished at Sun Jun  7 22:58:35 2026
+
+Total simulation time: 0:2:44
+
+Writing results to output file .......
+Flow Host.IO_Flow.Synth.No_0 - total requests generated: 670873 total requests serviced:670873
+                   - device response time: 5724 (us) end-to-end request delay:5724 (us)
+Simulation complete; Press any key to exit.
+REAL=164.04 USER=162.40 SYS=1.62 MAXRSS=4458824_KB

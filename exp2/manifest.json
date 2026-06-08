@@ -1,0 +1,308 @@
+{
+  "A_occ55": {
+    "exp": "A",
+    "occ": 55,
+    "ws": 100,
+    "thr": 0.001,
+    "op": 0.07,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "A_occ60": {
+    "exp": "A",
+    "occ": 60,
+    "ws": 100,
+    "thr": 0.001,
+    "op": 0.07,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "A_occ65": {
+    "exp": "A",
+    "occ": 65,
+    "ws": 100,
+    "thr": 0.001,
+    "op": 0.07,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "A_occ70": {
+    "exp": "A",
+    "occ": 70,
+    "ws": 100,
+    "thr": 0.001,
+    "op": 0.07,
+    "status": "REUSED",
+    "reused_from": "sw_occ_70"
+  },
+  "B_ws100": {
+    "exp": "B",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.05,
+    "op": 0.07,
+    "status": "REUSED",
+    "reused_from": "sw_thr_0p05"
+  },
+  "B_ws50": {
+    "exp": "B",
+    "occ": 50,
+    "ws": 50,
+    "thr": 0.05,
+    "op": 0.07,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "B_ws20": {
+    "exp": "B",
+    "occ": 50,
+    "ws": 20,
+    "thr": 0.05,
+    "op": 0.07,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "B_ws10": {
+    "exp": "B",
+    "occ": 50,
+    "ws": 10,
+    "thr": 0.05,
+    "op": 0.07,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "B_ws5": {
+    "exp": "B",
+    "occ": 50,
+    "ws": 5,
+    "thr": 0.05,
+    "op": 0.07,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "C_thr0p001_op0p07": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.001,
+    "op": 0.07,
+    "status": "REUSED",
+    "reused_from": "baseline"
+  },
+  "C_thr0p001_op0p05": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.001,
+    "op": 0.05,
+    "status": "REUSED",
+    "reused_from": "sw_op_0p05"
+  },
+  "C_thr0p001_op0p03": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.001,
+    "op": 0.03,
+    "status": "REUSED",
+    "reused_from": "sw_op_0p03"
+  },
+  "C_thr0p001_op0p02": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.001,
+    "op": 0.02,
+    "status": "REUSED",
+    "reused_from": "sw_op_0p02"
+  },
+  "C_thr0p001_op0p01": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.001,
+    "op": 0.01,
+    "status": "REUSED",
+    "reused_from": "sw_op_0p01"
+  },
+  "C_thr0p005_op0p07": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.005,
+    "op": 0.07,
+    "status": "REUSED",
+    "reused_from": "sw_thr_0p005"
+  },
+  "C_thr0p005_op0p05": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.005,
+    "op": 0.05,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "C_thr0p005_op0p03": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.005,
+    "op": 0.03,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "C_thr0p005_op0p02": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.005,
+    "op": 0.02,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "C_thr0p005_op0p01": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.005,
+    "op": 0.01,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "C_thr0p01_op0p07": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.01,
+    "op": 0.07,
+    "status": "REUSED",
+    "reused_from": "sw_thr_0p01"
+  },
+  "C_thr0p01_op0p05": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.01,
+    "op": 0.05,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "C_thr0p01_op0p03": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.01,
+    "op": 0.03,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "C_thr0p01_op0p02": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.01,
+    "op": 0.02,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "C_thr0p01_op0p01": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.01,
+    "op": 0.01,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "C_thr0p025_op0p07": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.025,
+    "op": 0.07,
+    "status": "REUSED",
+    "reused_from": "sw_thr_0p025"
+  },
+  "C_thr0p025_op0p05": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.025,
+    "op": 0.05,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "C_thr0p025_op0p03": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.025,
+    "op": 0.03,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "C_thr0p025_op0p02": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.025,
+    "op": 0.02,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "C_thr0p025_op0p01": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.025,
+    "op": 0.01,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "C_thr0p05_op0p07": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.05,
+    "op": 0.07,
+    "status": "REUSED",
+    "reused_from": "sw_thr_0p05"
+  },
+  "C_thr0p05_op0p05": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.05,
+    "op": 0.05,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "C_thr0p05_op0p03": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.05,
+    "op": 0.03,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "C_thr0p05_op0p02": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.05,
+    "op": 0.02,
+    "status": "NEW",
+    "reused_from": null
+  },
+  "C_thr0p05_op0p01": {
+    "exp": "C",
+    "occ": 50,
+    "ws": 100,
+    "thr": 0.05,
+    "op": 0.01,
+    "status": "NEW",
+    "reused_from": null
+  }
+}

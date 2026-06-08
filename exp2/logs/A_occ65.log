@@ -1,0 +1,57 @@
+MQSim started at Sun Jun  7 22:55:51 2026
+
+******************************
+Executing scenario 1 out of 1 .......
+SSD Device preconditioning started .........
+Finished preconditioning. Duration of preconditioning: 0:4:10
+[>                   ]  0% progress in Host.IO_Flow.Synth.No_0
+
+[=>                  ]  5% progress in Host.IO_Flow.Synth.No_0
+
+[==>                 ]  10% progress in Host.IO_Flow.Synth.No_0
+
+[===>                ]  15% progress in Host.IO_Flow.Synth.No_0
+
+[====>               ]  20% progress in Host.IO_Flow.Synth.No_0
+
+[=====>              ]  25% progress in Host.IO_Flow.Synth.No_0
+
+[======>             ]  30% progress in Host.IO_Flow.Synth.No_0
+
+[=======>            ]  35% progress in Host.IO_Flow.Synth.No_0
+
+[========>           ]  40% progress in Host.IO_Flow.Synth.No_0
+
+[=========>          ]  45% progress in Host.IO_Flow.Synth.No_0
+
+[==========>         ]  50% progress in Host.IO_Flow.Synth.No_0
+
+[===========>        ]  55% progress in Host.IO_Flow.Synth.No_0
+
+[============>       ]  60% progress in Host.IO_Flow.Synth.No_0
+
+[=============>      ]  65% progress in Host.IO_Flow.Synth.No_0
+
+[==============>     ]  70% progress in Host.IO_Flow.Synth.No_0
+
+[===============>    ]  75% progress in Host.IO_Flow.Synth.No_0
+
+[================>   ]  80% progress in Host.IO_Flow.Synth.No_0
+
+[=================>  ]  85% progress in Host.IO_Flow.Synth.No_0
+
+[==================> ]  90% progress in Host.IO_Flow.Synth.No_0
+
+[===================>]  95% progress in Host.IO_Flow.Synth.No_0
+
+[====================]  100% progress in Host.IO_Flow.Synth.No_0
+
+MQSim finished at Sun Jun  7 23:00:26 2026
+
+Total simulation time: 0:4:35
+
+Writing results to output file .......
+Flow Host.IO_Flow.Synth.No_0 - total requests generated: 825604 total requests serviced:825604
+                   - device response time: 4654 (us) end-to-end request delay:4654 (us)
+Simulation complete; Press any key to exit.
+REAL=275.31 USER=272.84 SYS=2.45 MAXRSS=7462632_KB

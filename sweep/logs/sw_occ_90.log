@@ -1,0 +1,18 @@
+MQSim started at Sun Jun  7 21:17:51 2026
+
+******************************
+Executing scenario 1 out of 1 .......
+SSD Device preconditioning started .........
+Finished preconditioning. Duration of preconditioning: 0:8:4
+[>                   ]  0% progress in Host.IO_Flow.Synth.No_0
+
+MQSim finished at Sun Jun  7 21:26:13 2026
+
+Total simulation time: 0:8:22
+
+Writing results to output file .......
+Flow Host.IO_Flow.Synth.No_0 - total requests generated: 388 total requests serviced:260
+                   - device response time: 1946 (us) end-to-end request delay:1946 (us)
+free(): invalid pointer
+Command terminated by signal 6
+REAL=502.62 USER=499.16 SYS=3.29 MAXRSS=9526848_KB
