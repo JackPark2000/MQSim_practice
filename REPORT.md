@@ -86,104 +86,20 @@ GC fires when the per-plane free-block pool drops below `thr × 2048` blocks.
 
 ---
 
-## 3. Phase 1 — Verification run (`results/`)
+## 3. Phase 1 — Pilot verification run (not in repo)
 
-Goal: confirm `GC_Read_TR_Queue`, `GC_Write_TR_Queue`, `GC_Erase_TR_Queue` are
-non-zero under the PPT guideline target config.
+Originally we did a short pilot run reproducing the PPT guideline's
+"target" config (`occ=95, ws=10, thr=0.05, OP=0.07, Read%=1, QD=128, 100 s`)
+to confirm `GC_Read_TR_Queue`, `GC_Write_TR_Queue`, `GC_Erase_TR_Queue` go
+non-zero in MQSim at all. They did (target ran `Total_GC_Executions = 4,666`,
+`Average_Page_Movement_For_GC = 187.89`, WAF = 3.75, tail latency 2.77 s).
 
-### 3.1 Configs
-
-Workload single-flow synthetic (taken from the first IO_Scenario in the
-shipped `workload.xml`, all other flows removed):
-
-| Knob | Baseline | Target |
-| --- | ---: | ---: |
-| `Initial_Occupancy_Percentage` | 50 | **95** |
-| `Working_Set_Percentage` | 100 | **10** |
-| `GC_Exec_Threshold` | 0.05 | 0.05 |
-| `Overprovisioning_Ratio` | 0.07 | 0.07 |
-| `Read_Percentage` | 1 | 1 |
-| `Average_No_of_Reqs_in_Queue` (QD) | 128 | 128 |
-| `Stop_Time` | 100 s (`100,000,000,000` ns) | 100 s |
-| `Enabled_Preconditioning` | true | true |
-| `GC_Block_Selection_Policy` | GREEDY | GREEDY |
-| `Preemptible_GC_Enabled` | false | false |
-| `Ideal_Mapping_Table` | true | true |
-| Channel / Chip / Die / Plane IDs | all (8 × 4 × 2 × 2) | all |
-
-### 3.2 Runtime
-
-| Run | Real time | Peak RSS | Exit | Output |
-| --- | ---: | ---: | ---: | --- |
-| Baseline | 231 s (3 m 51 s) | 6.2 GB | 0 | `results/baseline_occ50_thr05.xml` |
-| Target | 511 s (8 m 31 s) | 4.8 GB | 0 | `results/target_occ95_thr05.xml` |
-
-Target emitted a warning during preconditioning:
-
-```
-The specified initial occupancy value could not be satisfied as the
-working set of workload #0 is small. MQSim made some adjustments!
-```
-
-This means `Working_Set=10%` is too tight to satisfy `Initial_Occupancy=95%`
-exactly; MQSim adjusted internally. Simulation continued normally.
-
-### 3.3 Results
-
-#### 3.3.1 FTL statistics
-
-| FTL field | Baseline | Target |
-| --- | ---: | ---: |
-| `Issued_Flash_Read_CMD` | 490,159 | 883,010 |
-| `Issued_Flash_Program_CMD` | 2,584,094 | 1,120,529 |
-| `Issued_Flash_Erase_CMD` | 9,476 | 4,021 |
-| `Issued_Flash_Multiplane_Erase_CMD` | 345 | 386 |
-| `Total_GC_Executions` | **10,039** | **4,666** |
-| `Average_Page_Movement_For_GC` | **43.73** | **187.89** |
-| `Total_WL_Executions` | 127 | 127 |
-
-#### 3.3.2 TSU TR-queue aggregates (sum across 32 channel/chip queues)
-
-| Queue | qcnt | Enqueued (B) | Enqueued (T) | MaxQ (B/T) | AvgWait µs (B/T) | MaxWait µs (B/T) |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| `User_Read_TR_Queue` (× 4 priority) | 128 | 21,998 | 3,296 | 5 / 5 | 1,206 / 16,685 | 775,092 / 2,767,135 |
-| `User_Write_TR_Queue` (× 4 priority) | 128 | 2,180,095 | 329,661 | 194 / 240 | 2,663 / 14,527 | 830,112 / 2,627,975 |
-| `Mapping_Read_TR_Queue` | 32 | 0 | 0 | — | — | — |
-| `Mapping_Write_TR_Queue` | 32 | 0 | 0 | — | — | — |
-| **`GC_Read_TR_Queue`** | 32 | **471,125** | **907,448** | 506 / 713 | 3,512 / 17,500 | 32,519 / 66,892 |
-| **`GC_Write_TR_Queue`** | 32 | **471,125** | **907,448** | 585 / **2,312** | 35,434 / **372,311** | 256,763 / 1,349,724 |
-| **`GC_Erase_TR_Queue`** | 32 | **10,166** | **4,793** | 6 / 16 | 64,176 / 775,305 | 594,312 / **2,621,405** |
-
-Mapping_* is zero because `Ideal_Mapping_Table=true` removes CMT misses.
-
-#### 3.3.3 Host.IO_Flow
-
-| Field | Baseline | Target | Ratio |
-| --- | ---: | ---: | ---: |
-| `Request_Count` | 2,202,508 | 333,264 | 0.15× |
-| `Read_Request_Count` | 21,998 | 3,296 | |
-| `Write_Request_Count` | 2,180,510 | 329,968 | |
-| `IOPS` | 22,004 | 3,322 | 0.15× |
-| `Bandwidth` (B/s) | 90,129,864 | 13,608,010 | 0.15× |
-| `Device_Response_Time` (µs) | 5,811 | **38,421** | 6.61× |
-| `Min_Device_Response_Time` (µs) | 25 | 25 | |
-| `Max_Device_Response_Time` (µs) | 775,181 | **2,767,224** | 3.57× |
-| `End_to_End_Request_Delay` (µs) | 5,811 | 38,421 | 6.61× |
-
-#### 3.3.4 Derived
-
-| | Baseline | Target |
-| --- | ---: | ---: |
-| `WAF = (user_w + gc_w) / user_w` | 1.216 | **3.753** |
-| GC writes per host write | 0.216 | **2.750** |
-
-### 3.4 Phase-1 takeaway
-
-GC transactions are **non-zero in both runs** ⇒ acceptance condition satisfied.
-Target additionally shows the classic high-occupancy steady-state signature:
-~4.3× more valid pages copied per GC, WAF rising 1.22 → 3.75, IOPS collapsing
-6.6×, and `Max_Device_Response_Time` reaching 2.77 s (almost exactly equal to
-`GC_Erase_TR_Queue` max wait of 2.62 s — tail latency *is* GC erase wait).
+This was just a smoke test — the rest of the work is built on a proper
+*no-GC* baseline (Phase 2) and per-parameter sweeps. The pilot's working
+dirs (`run_baseline/`, `run_target/`, `results/`, `exp_configs/`,
+`exp_workloads/`) have been removed from the repo since they're not part
+of the reproduction path. The Phase-1 takeaway — tail latency tracks
+`GC_Erase_TR_Queue` max wait almost 1:1 — re-emerges in Phase 3.
 
 ---
 
